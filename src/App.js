@@ -37,7 +37,6 @@ const About = () => (
 
 const Matchmaking = () => {
   const navigate = useNavigate();
-
   const stored = typeof window !== 'undefined' ? localStorage.getItem('emma_user') : null;
   const parsedUser = stored ? JSON.parse(stored) : null;
 
@@ -53,15 +52,6 @@ const Matchmaking = () => {
     const timer = setInterval(() => setTimeLeftMs(Math.max(0, REVEAL_DATE.getTime() - Date.now())), 1000);
     return () => clearInterval(timer);
   }, [step]);
-
-  const formatTime = ms => {
-    const s = Math.floor(ms / 1000);
-    const days = Math.floor(s / 86400);
-    const hours = Math.floor((s % 86400) / 3600);
-    const mins = Math.floor((s % 3600) / 60);
-    const secs = s % 60;
-    return `${days}d ${String(hours).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
-  };
 
   useEffect(() => {
     if (timeLeftMs <= 0 && step === 'waiting') {
@@ -148,24 +138,17 @@ const Matchmaking = () => {
           <h2>Waiting Room</h2>
           <p>Your submission is saved. You cannot submit again with the same email.</p>
           <p>Reveal at: {REVEAL_DATE.toUTCString()}</p>
-          <p>Countdown: {formatTime(timeLeftMs)}</p>
+          <p>Countdown: {Math.max(0, REVEAL_DATE.getTime() - Date.now())}</p>
         </div>
       )}
     </div>
   );
 };
 
-const Reveal = ({user}) => {
-  if (!user) return (
-    <div className="reveal">
-      <h2>Matches Revealed</h2>
-      <p>No submission found for this browser session. If you submitted earlier, your match details would appear here after the shared reveal.</p>
-    </div>
-  );
-
-  return (
-    <div className="reveal">
-      <h2>Matches Revealed</h2>
+const Reveal = ({user}) => (
+  <div className="reveal">
+    <h2>Matches Revealed</h2>
+    {user ? (
       <div className="card">
         <div><strong>Name:</strong> {user.name}</div>
         <div><strong>Grade:</strong> {user.grade}</div>
@@ -174,9 +157,11 @@ const Reveal = ({user}) => {
           <pre>{JSON.stringify(user.answers||{},null,2)}</pre>
         </div>
       </div>
-    </div>
-  );
-};
+    ) : (
+      <p>No submission found for this session.</p>
+    )}
+  </div>
+);
 
 export default function App() {
   return (
@@ -186,7 +171,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/matchmaking" element={<Matchmaking />} />
-        <Route path="/matchmaking/reveal" element={<Reveal user={JSON.parse(localStorage.getItem('emma_user') || 'null')} />} />
+        <Route path="/matchmaking/reveal" element={<Reveal user={JSON.parse(localStorage.getItem('emma_user'))} />} />
       </Routes>
     </div>
   );

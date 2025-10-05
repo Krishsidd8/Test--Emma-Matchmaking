@@ -5,7 +5,7 @@ import App from './App';
 import './styles.css';
 
 const container = document.getElementById('root');
-if (!container) throw new Error('Root container missing in public/index.html');
+if (!container) throw new Error('Root container missing in docs/index.html');
 
 const root = createRoot(container);
 root.render(

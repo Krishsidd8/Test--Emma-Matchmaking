@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff9e6;
+  color: #333;
+}
+
+.navbar {
+  background-color: #ffb6b9;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home {
+  background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #ffb6b9;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.about img {
+  width: 40%;
+  border-radius: 1rem;
+  margin-right: 2rem;
+}
+
+.matchmaking input, .matchmaking select, .matchmaking button {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #fcbad3;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.waiting {
+  text-align: center;
+  padding: 2rem;
+}
+
+.reveal .card {
+  background: white;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}

@@ -1,7 +1,7 @@
 {
   "name": "emma-matchmaking",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "homepage": "https://krishsidd8.github.io/Test--Emma-Matchmaking/",
   "scripts": {
     "start": "react-scripts start",

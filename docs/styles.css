@@ -22,7 +22,7 @@ body {
 }
 
 .home {
-  background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac');
+  background-image: url("DN4_1174.jpg");
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -55,6 +55,7 @@ body {
 
 .about img {
   width: 40%;
+  background-image: url(images.jpg);
   border-radius: 1rem;
   margin-right: 2rem;
 }

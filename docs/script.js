@@ -26,7 +26,7 @@ function renderAbout() {
   return `<div class='about'>
     <img src='https://via.placeholder.com/400' alt='The Play'/>
     <div><h2>About the Play</h2>
-    <p>Emma's Matchmaking is a playful school project where fun, vibes, and connection meet. Whether you’re finding a friend or a group, it’s all about shared experiences and laughter!</p></div>
+    <p>Emma is a witty and theatrical adaptation of Jane Austen’s beloved novel, following the charming yet meddlesome Emma Woodhouse as she navigates romantic entanglements in early 19th-century England. Though she vows never to marry, Emma delights in matchmaking for others, particularly her friend Harriet Smith, despite warnings from the sensible Mr. Knightley. Her plans go awry when Mr. Elton, whom she intended for Harriet, reveals his interest in Emma instead. The arrival of Jane Fairfax and Frank Churchill adds further intrigue and confusion, prompting Emma to confront her own feelings and misjudgments. Ultimately, she realizes her love for Mr. Knightley, leading to heartfelt resolutions and personal growth. Blending humor, heart, and period charm, the play explores themes of love, friendship, social class, and self-awareness, with notable adaptations offering tones that range from classic elegance to screwball comedy</p></div>
   </div>`;
 }
 

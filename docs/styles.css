@@ -55,7 +55,6 @@ body {
 
 .about img {
   width: 40%;
-  background-image: url(images.jpg);
   border-radius: 1rem;
   margin-right: 2rem;
 }
